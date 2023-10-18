@@ -1,0 +1,48 @@
+.animated-image {
+    position: absolute;
+    width: 34%;
+    height: 458px;
+    object-fit: cover;
+    animation: moveImage 40s linear infinite;
+}
+
+@keyframes moveImage {
+    0% {
+        right: 0;
+        top: 0;
+    }
+    25% {
+        right: 0;
+        top: 100%;
+    }
+    50% {
+        right: 100%;
+        top: 100%;
+    }
+    75% {
+        right: 100%;
+        top: 0;
+    }
+    100% {
+        right: 0;
+        top: 0;
+    }
+}
+
+
+.moving-image {
+    animation: moveImage 30s linear infinite; /* Reduced animation duration to 3 seconds */
+  }
+  
+  @keyframes moveImage {
+    0% {
+      left: -100px; /* Initial position, off the left side of the screen */
+    }
+    50% {
+      left: calc(100% - 100px); /* Middle position, right side of the screen */
+    }
+    100% {
+      left: -100px; /* Final position, off the left side of the screen again */
+    }
+  }
+  
