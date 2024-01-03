@@ -1,55 +1,99 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./index.css"
 
 import { Button, Img, Input, Line, List, Text } from "components";
+import Carousel from "components/company_animation/App";
 
 const FinalDesignH2OResponsive1500PlusPage = () => {
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+
+
+  const items = [
+    {
+      title: "Beginner Plastic",
+      price: "Rs. 30000",
+      imageSrc: "images/img_1litrepackage.png",
+      type: "Plastic Bottles",
+      units: "5000 Units",
+    },
+    {
+      title: "Pro Plastic",
+      price: "Rs. 50000",
+      imageSrc: "images/img_istockphoto484.png",
+      type: "Plastic Bottles",
+      units: "10000 Units",
+    },
+    {
+      title: "Beginner Carton",
+      price: "Rs. 40000",
+      imageSrc: "images/img_screenshot2023.png",
+      type: "Cardboard Cartons",
+      units: "5000 Units",
+    },
+    {
+      title: "Pro Carton",
+      price: "Rs. 60000",
+      imageSrc: "images/img_i290421638so.png",
+      type: "Cardboard Cartons",
+      units: "10000 Units",
+    },
+  ];
+
   return (
     <>
-      <div className="flex flex-col font-plusjakartasans items-center justify-start mx-auto w-full">
+      <div className="bg-gray-900 flex flex-col font-plusjakartasans items-center justify-start mx-auto w-full">
         <div className="bg-gray-900 flex md:flex-col flex-row md:gap-5 items-start justify-start pt-[3px] px-[3px] w-full">
-          <div className="flex flex-col items-start justify-start md:ml-[0] ml-[267px] md:px-5 w-auto">
+          <div className="flex flex-col items-start justify-start  ml-[267px] w-auto">
             <Img
-              className="h-[148px] md:h-auto object-cover w-[182px] sm:w-full"
+              className="h-[148px]  object-cover w-[182px] sm:w-full"
               src="images/img_shareh2ologoremovebgpreview.png"
               alt="shareh2ologorem"
             />
           </div>
           <div className="flex sm:flex-1 flex-row sm:gap-10 gap-[76px] items-start justify-start md:ml-[0] ml-[221px] md:mt-0 mt-[25px] md:px-5 px-[106px] py-[29px] w-auto sm:w-full">
             <Text
-              className="text-base text-center text-white-A700 w-auto"
+              className="text-base text-[22px] text-center text-white-A700 w-auto"
               size="txtPlusJakartaSansSemiBold16"
+              onClick={() => scrollToSection("advertising")}
             >
               Advertise
             </Text>
             <Text
-              className="text-base text-center text-white-A700 w-auto"
+              className="text-base text-[22px]  text-center text-white-A700 w-auto"
               size="txtPlusJakartaSansSemiBold16"
+              onClick={() => scrollToSection("Pricing")}
             >
               Pricing
             </Text>
             <a
               href="javascript:"
-              className="text-base text-center text-white-A700 w-auto"
+              className="text-base text-[22px]  text-center text-white-A700 w-auto"
             >
-              <Text size="txtPlusJakartaSansSemiBold16">Contact Us</Text>
+              <Text onClick={() => scrollToSection("Contactus")} size="txtPlusJakartaSansSemiBold16">Contact Us</Text>
             </a>
           </div>
           <div className="flex flex-col items-center justify-start md:ml-[0] ml-[291px] md:mt-0 mt-[43px] md:px-5 w-auto">
-            <Button
-              className="cursor-pointer font-medium min-w-[188px] rounded-[29px] text-base text-center"
+       <Link to="/login">
+       <Button
+              className="cursor-pointer font-medium text-[18px]  min-w-[188px] rounded-[29px] text-base text-center"
               color="white_A700"
               size="md"
               variant="outline"
             >
               Login / Sign Up
             </Button>
+       </Link>    
           </div>
         </div>
         <div className="h-[6547px] sm:h-[7477px] md:h-[8827px] md:px-5 relative w-full">
           <div className="border border-black-900 border-solid flex flex-col h-full items-center justify-end m-auto w-full">
-            <div className="bg-gray-900 flex md:flex-col flex-row md:gap-10 items-center justify-between mt-[1044px] p-[3px] w-full">
+            <div id="advertising" className="bg-gray-900 flex md:flex-col flex-row md:gap-10 items-center justify-between mt-[1044px] p-[3px] w-full">
               <div className="h-[709px] md:h-[801px] mb-[92px] md:ml-[0] ml-[162px] md:px-10 sm:px-5 px-[43px] relative w-[39%] md:w-full">
                 <div className="h-[709px] m-auto w-[89%] md:w-full">
                   <Img
@@ -92,9 +136,11 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                   </Text>
                 </div>
                 <div className="flex flex-col gap-[19px] items-start justify-start mr-[104px] mt-[54px] md:px-10 px-16 sm:px-5 w-[591px] sm:w-full">
-                  <div className="flex sm:flex-col flex-row sm:gap-5 items-center justify-start w-[90%] md:w-full">
+                  
+                  <div className="w-[550px] flex sm:flex-col flex-row sm:gap-5 items-center justify-start  md:w-full">
                   <Img
-                                className="h-10 mb-[19px] mt-[3px] w-10 mr-3"
+                 
+                                className="items-center h-10  mt-auto  w-10 mr-5"
                                 src="images/img_clock.svg"
                                 alt="clock"
                               />
@@ -105,9 +151,10 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                       Distribute Free in your own business events
                     </Text>
                   </div>
-                  <div className="flex sm:flex-col flex-row sm:gap-5 items-start justify-start w-[96%] md:w-full">
+
+                  <div className="flex w-[550px] sm:flex-col flex-row sm:gap-5 items-start justify-start  md:w-full">
                   <Img
-                                className="h-10 mb-[19px] mt-[3px] w-10 mr-3"
+                                className="h-10 mt-[3px] w-10 mr-5"
                                 src="images/img_clock.svg"
                                 alt="clock"
                               />
@@ -118,9 +165,10 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                       Ask us to distribute Free to relevant Audience
                     </Text>
                   </div>
-                  <div className="flex flex-row items-center justify-start w-[54%] md:w-full">
+
+                  <div  className="flex w-[550px] flex-row items-center justify-start  md:w-full" >
                   <Img
-                                className="h-10 mb-[19px] mt-[3px] w-10 mr-3"
+                                className="h-10  mt-[3px] w-10 mr-5"
                                 src="images/img_clock.svg"
                                 alt="clock"
                               />
@@ -131,6 +179,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                       Sell bottles with your Ads
                     </Text>
                   </div>
+
                 </div>
                 <Button
                   className="capitalize cursor-pointer font-medium min-w-[174px] md:ml-[0] ml-[119px] mr-[401px] mt-[91px] text-base text-center"
@@ -300,15 +349,16 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute flex flex-col inset-x-[0] items-start justify-start mx-auto pt-[3px] px-[3px] top-[7%] w-1/5">
+              <div   id="Process" className="absolute flex flex-col inset-x-[0] items-start justify-start mx-auto pt-[3px] px-[3px] top-[7%] w-1/5">
                 <Text
-                  className="capitalize md:ml-[0] ml-[98px] sm:text-4xl md:text-[38px] text-[40px] text-white-A700"
+                  className="apitalize md:ml-[0] ml-[98px] sm:text-4xl md:text-[38px] text-[40px] text-white-A700"
                   size="txtPlusJakartaSansSemiBold40"
                 >
                   Process
                 </Text>
                 <Img
-                  className="h-1.5  md:ml-[0] ml-[120px]"
+        
+                  className="h-1.5 w-[80%] ml-[40px] md:ml-[0] "
                   src="images/img_svg.svg"
                   alt="svg"
                 />
@@ -504,38 +554,9 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                   </span>
                 </Text>
               </div>
-              <div className="flex md:flex-col flex-row gap-[45px] items-start justify-start mb-[27px] w-auto md:w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-28 sm:w-full"
-                  src="images/img_2024.png"
-                  alt="2024"
-                />
-                <Img
-                  className="h-10 md:h-auto object-cover w-[247px] sm:w-full"
-                  src="images/img_2025.png"
-                  alt="2025"
-                />
-                <Img
-                  className="h-10 md:h-auto object-cover w-[133px] sm:w-full"
-                  src="images/img_2026.png"
-                  alt="2026"
-                />
-                <Img
-                  className="h-10 md:h-auto object-cover w-[270px] sm:w-full"
-                  src="images/img_2027.png"
-                  alt="2027"
-                />
-                <Img
-                  className="h-10 md:h-auto object-cover w-[152px] sm:w-full"
-                  src="images/img_2028.png"
-                  alt="2028"
-                />
-                <Img
-                  className="h-10 md:h-auto object-cover w-[152px] sm:w-full"
-                  src="images/img_2029.png"
-                  alt="2029"
-                />
-              </div>
+              {/* <div className=""> */}
+                <Carousel/>
+              {/* </div> */}
             </div>
             <div className="bg-gray-900_01 flex flex-col items-end justify-start p-[29px] sm:px-5 w-full">
               <div className="flex flex-col gap-3.5 items-start justify-start mb-[17px] mr-[57px] w-4/5 md:w-full">
@@ -561,21 +582,22 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                             Step 1{" "}
                           </Text>
                         </div>
-                        <div className="absolute bottom-[20%] flex flex-col gap-2 items-center justify-start left-[14%] w-[47%]">
+                        <div className="absolute bottom-[15%] flex flex-col gap-2 items-center justify-start left-[14%] w-[47%]">
                           <Text
+                       
                             className="capitalize text-2xl md:text-[22px] text-center text-white-A700 sm:text-xl"
                             size="txtPlusJakartaSansSemiBold24"
                           >
                             Increase
                           </Text>
-                          <div className="flex flex-col gap-2 justify-start w-[51%] md:w-full">
+                          <div    className="flex flex-col gap-2 justify-start w-[81%] md:w-full">
                             <Text
                               className="capitalize md:ml-[0] ml-[5px] text-2xl md:text-[22px] text-center text-orange-400 sm:text-xl"
                               size="txtPlusJakartaSansSemiBold24Orange400"
                             >
                               Foot Traffic
                             </Text>
-                            <Line className="bg-orange-400 h-0.5 mr-[5px] w-[97%]" />
+                            <Line className="bg-orange-400 h-0.5 ml-[40px] w-[60%]" />
                           </div>
                         </div>
                       </div>
@@ -598,7 +620,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                             Step 2{" "}
                           </Text>
                         </div>
-                        <div className="absolute bottom-[16%] flex flex-row items-start justify-center left-[14%] w-[46%]">
+                        <div className="absolute bottom-[16%] flex flex-row items-start justify-center left-[22%] w-[46%]">
                           <Text
                             className="capitalize ml-1.5 mt-0.5 text-2xl md:text-[22px] text-center text-white-A700 sm:text-xl"
                             size="txtPlusJakartaSansSemiBold24"
@@ -686,12 +708,12 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                     <div className="flex flex-col items-center justify-start p-[15px] w-1/2 md:w-full">
                       <div className="bg-black-900_a0 flex flex-col gap-5 items-start justify-start mb-[15px] p-[34px] sm:px-5 rounded-[20px] shadow-bs1 w-full">
                         <div className="md:h-[101px] h-[117px] ml-1.5 md:ml-[0] pt-[15px] relative w-[93%] sm:w-full">
-                          <Img
-                            className="h-[46px]"
+                          <Img  
+                            className="h-[36px]"
                             src="images/img_divtestistar.svg"
                             alt="divtestistar"
                           />
-                          <div className="absolute bottom-[0] flex flex-col inset-x-[0] items-center justify-end mx-auto pt-9 w-full">
+                          <div   className="absolute bottom-[0] flex flex-col inset-x-[0] items-center justify-end mx-auto pt-9 w-full ">
                             <Text
                               className="leading-[28.00px] text-base text-white-A700 w-full"
                               size="txtPlusJakartaSansMedium16WhiteA700"
@@ -714,7 +736,8 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                             />
                             <div className="flex flex-col gap-[9px] items-start justify-start mt-1">
                               <Text
-                                className="capitalize text-lg text-white-A700"
+                            
+                                className="capitalize text-lg text-white-A700 w-[150px]"
                                 size="txtPlusJakartaSansSemiBold18"
                               >
                                 Jack M.Gomes
@@ -733,9 +756,9 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                     <div className="flex flex-col items-start justify-start md:pl-10 sm:pl-5 pl-[63px] w-1/2 md:w-full">
                       <div className="flex flex-col items-start justify-start pr-0.5 pt-0.5 w-full">
                         <div className="flex flex-col items-start justify-start w-[82%] md:w-full">
-                          <div className="flex flex-col items-center justify-center w-auto sm:w-full">
+                          <div className="flex flex-row items-start justify-start w-auto sm:w-full min-w-[400px] ">
                             <Text
-                              className="capitalize sm:text-4xl md:text-[38px] text-[40px] text-white-A700 w-auto"
+                              className="capitalize sm:text-4xl md:text-[38px] text-[35px] text-white-A700 w-auto"
                               size="txtPlusJakartaSansSemiBold40"
                             >
                               24/7 we care about
@@ -744,20 +767,20 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                           <div className="flex flex-row gap-1.5 items-center justify-start mt-0.5 w-[92%] md:w-full">
                             <div className="flex flex-col items-center justify-center w-auto">
                               <Text
-                                className="capitalize sm:text-4xl md:text-[38px] text-[40px] text-white-A700 w-auto"
+                                className="capitalize sm:text-4xl md:text-[38px] text-[35px] text-white-A700 w-auto"
                                 size="txtPlusJakartaSansSemiBold40"
                               >
                                 Client
                               </Text>
                             </div>
-                            <div className="md:h-[51px] h-[53px] relative w-[235px]">
+                            <div className="md:h-[51px] h-[53px] relative w-[235px] ml-5">
                               <Text
-                                className="absolute capitalize h-max inset-[0] m-auto sm:text-4xl md:text-[38px] text-[40px] text-white-A700 w-max"
+                                className="absolute capitalize h-max inset-[0] m-auto sm:text-4xl md:text-[38px] text-[35px] text-white-A700 w-max"
                                 size="txtPlusJakartaSansSemiBold40"
                               >
                                 Satisfaction
                               </Text>
-                              <Line className="absolute bg-white-A700 bottom-[0] h-0.5 inset-x-[0] mx-auto w-full" />
+                              <Line className="absolute bg-white-A700 bottom-[0] h-0.5 inset-x-[0] mx-auto w-full min-w-[220px]" />
                             </div>
                           </div>
                         </div>
@@ -771,7 +794,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                           We will get back to you within 24 hours.
                         </Text>
                       </div>
-                      <div className="flex flex-col items-start justify-start md:px-10 sm:px-5 px-[130px] w-full">
+                      <div    onClick={() => scrollToSection("Contactus")} className="flex flex-col items-start justify-start md:px-10 sm:px-5 px-[130px] w-full">
                         <Button
                           className="capitalize cursor-pointer font-medium min-w-[175px] text-base text-center"
                           shape="round"
@@ -786,7 +809,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-900 flex flex-col items-center justify-end p-[27px] sm:px-5 w-full ">
+            <div id="Pricing" className="bg-gray-900 flex flex-col items-center justify-end p-[27px] sm:px-5 w-full ">
               <div className="md:h-[1102px] sm:h-[2240px] h-[859px] mt-[23px] pb-[33px] sm:px-5 px-[33px] relative w-[98%] md:w-full">
                 <Img
                   className="absolute h-[430px] left-[4%] object-cover top-[0] w-[27%]"
@@ -821,29 +844,37 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                   className="absolute bottom-[10%] sm:flex-col flex-row gap-[59px] grid sm:grid-cols-1 md:grid-cols-2 grid-cols-4 h-[557px] inset-x-[0] justify-start mx-auto md:px-10 sm:px-5 px-[285px] w-auto"
                   orientation="horizontal"
                 >
-                  <div className="flex flex-col gap-2.5 justify-start w-full">
-                    <div className="bg-gray-900_01 flex flex-col items-start justify-start p-[21px] sm:px-5 rounded-[30px] w-full ">
-                      <div className="flex flex-col gap-3.5 items-start justify-start md:ml-[0] ml-[21px] w-auto">
+                 
+                 
+             {items.map((each,index)=>(
+              <div  className="flex flex-col gap-2.5 justify-start w-full">
+                    <div  className="bg-gray-900_01 flex flex-col items-start justify-start p-[21px] sm:px-5 rounded-[30px] w-full ">
+                      <div   className="flex flex-col items-center gap-3.5 items-start justify-start  w-full">
                         <Text
-                          className="capitalize text-center text-white-A700 text-xl w-[155px]"
+                        
+                          className="capitalize text-center text-white-A700 text-xl w-[220px] h-auto"
                           size="txtPlusJakartaSansSemiBold20"
                         >
-                          Beginner Plastic
+                          {each.title}
                         </Text>
                         <Text
-                          className="sm:text-[27px] md:text-[29px] text-[31px] text-white-A700 tracking-[-0.86px] w-36"
+                     
+                          className="sm:text-[27px] md:text-[29px] text-center text-[31px] text-white-A700 tracking-[-0.86px] w-[220px]"
                           size="txtSpaceGroteskBold31"
                         >
-                          Rs. 30000
+                          {each.price}
                         </Text>
                       </div>
+                      <div className="w-full flex flex-row justify-center items-center h-[200px] min-w-[200px] mt-5 mb-5">
                       <Img
-                        className="h-[158px] md:h-auto md:ml-[0] ml-[15px] mt-[35px] object-cover w-[158px]"
-                        src="images/img_1litrepackage.png"
+                      
+                        className="md:ml-[0] min-w-[108px] max-w-auto max-h-[170px]"
+                        src={each.imageSrc}
                         alt="1litrepackage"
                       />
-                      <div className="flex flex-col gap-2.5 items-start justify-start mb-[77px] ml-4 md:ml-[0] mt-2.5 w-auto">
-                        <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-full">
+                      </div>
+                      <div   className="flex flex-col gap-2.5 items-start justify-start mb-[77px]  md:ml-[0] mt-2.5 w-full">
+                        <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-[200px]">
                           <Img
                             className="h-[15px] w-[15px]"
                             src="images/img_listiconsvg.svg"
@@ -853,7 +884,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                             className="text-base text-white-A700"
                             size="txtPlusJakartaSansMedium16WhiteA700"
                           >
-                            Plastic Bottles
+                            {each.type}
                           </Text>
                         </div>
                         <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-full">
@@ -866,13 +897,14 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                             className="text-base text-white-A700"
                             size="txtPlusJakartaSansMedium16WhiteA700"
                           >
-                            5000 Units
+                          {each.units}
                           </Text>
                         </div>
                       </div>
                     </div>
                     <div className="bg-deep_orange-A700 flex flex-col items-center justify-center md:ml-[0] ml-[54px] mr-[74px] md:px-10 px-11 sm:px-5 py-2.5 rounded-[14px] shadow-bs w-auto">
-                      <div className="flex flex-col items-start justify-start w-auto">
+                     <Link to="/login">
+                     <div className="flex flex-col items-start justify-start w-auto">
                         <Text
                           className="capitalize text-base text-center text-white-A700 w-auto"
                           size="txtPlusJakartaSansMedium16WhiteA700"
@@ -880,195 +912,15 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                           select{" "}
                         </Text>
                       </div>
+                      </Link> 
                     </div>
                   </div>
-                  <div className="flex flex-col gap-2.5 justify-start w-full">
-                    <div className="bg-gray-900_01 flex flex-col gap-[33px] items-center justify-start p-[15px] rounded-[30px] w-full">
-                      <div className="flex flex-col gap-3.5 items-start justify-start w-auto">
-                        <Text
-                          className="capitalize text-center text-white-A700 text-xl w-[101px]"
-                          size="txtPlusJakartaSansSemiBold20"
-                        >
-                          Pro Plastic{" "}
-                        </Text>
-                        <Text
-                          className="sm:text-[27px] md:text-[29px] text-[31px] text-white-A700 tracking-[-0.86px] w-36"
-                          size="txtSpaceGroteskBold31"
-                        >
-                          Rs. 50000
-                        </Text>
-                      </div>
-                      <div className="flex flex-col gap-[18px] items-start justify-start mb-[83px] mr-[25px] w-[81%] md:w-full">
-                        <Img
-                          className="h-[165px] md:h-auto object-cover w-full"
-                          src="images/img_istockphoto484.png"
-                          alt="istockphoto484"
-                        />
-                        <div className="flex flex-col gap-2.5 items-start justify-start w-auto">
-                          <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-full">
-                            <Img
-                              className="h-[15px] w-[15px]"
-                              src="images/img_listiconsvg.svg"
-                              alt="listiconsvg"
-                            />
-                            <Text
-                              className="text-base text-white-A700"
-                              size="txtPlusJakartaSansMedium16WhiteA700"
-                            >
-                              Plastic Bottles
-                            </Text>
-                          </div>
-                          <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-full">
-                            <Img
-                              className="h-[15px] w-[15px]"
-                              src="images/img_listiconsvg.svg"
-                              alt="listiconsvg_One"
-                            />
-                            <Text
-                              className="text-base text-white-A700"
-                              size="txtPlusJakartaSansMedium16WhiteA700"
-                            >
-                              10000 Units
-                            </Text>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-deep_orange-A700 flex flex-col items-center justify-center md:ml-[0] ml-[54px] mr-[74px] md:px-10 px-11 sm:px-5 py-2.5 rounded-[17px] shadow-bs w-auto">
-                      <div className="flex flex-col items-start justify-start w-auto">
-                        <Text
-                          className="capitalize text-base text-center text-white-A700 w-auto"
-                          size="txtPlusJakartaSansMedium16WhiteA700"
-                        >
-                          select{" "}
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2.5 justify-start w-full">
-                    <div className="bg-gray-900_01 flex flex-col items-start justify-start p-3.5 rounded-[30px] w-full">
-                      <div className="flex flex-col gap-3.5 items-start justify-start md:ml-[0] ml-[19px] w-auto">
-                        <Text
-                          className="capitalize text-center text-white-A700 text-xl w-[157px]"
-                          size="txtPlusJakartaSansSemiBold20"
-                        >
-                          Beginner Carton{" "}
-                        </Text>
-                        <Text
-                          className="sm:text-[27px] md:text-[29px] text-[31px] text-white-A700 tracking-[-0.86px] w-[145px]"
-                          size="txtSpaceGroteskBold31"
-                        >
-                          Rs. 40000
-                        </Text>
-                      </div>
-                      <Img
-                        className="h-[124px] md:h-auto md:ml-[0] ml-[59px] mt-[63px] object-cover w-[24%] sm:w-full"
-                        src="images/img_screenshot2023.png"
-                        alt="screenshot2023"
-                      />
-                      <div className="flex flex-col gap-2.5 items-start justify-start mb-[84px] md:ml-[0] ml-[23px] mt-[30px] w-auto">
-                        <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-full">
-                          <Img
-                            className="h-[15px] w-[15px]"
-                            src="images/img_listiconsvg.svg"
-                            alt="listiconsvg"
-                          />
-                          <Text
-                            className="text-base text-white-A700"
-                            size="txtPlusJakartaSansMedium16WhiteA700"
-                          >
-                            Cardboard Cartons
-                          </Text>
-                        </div>
-                        <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-[91%] md:w-full">
-                          <Img
-                            className="h-[15px] w-[15px]"
-                            src="images/img_listiconsvg.svg"
-                            alt="listiconsvg_One"
-                          />
-                          <Text
-                            className="text-base text-white-A700"
-                            size="txtPlusJakartaSansMedium16WhiteA700"
-                          >
-                            5000 Units
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-deep_orange-A700 flex flex-col items-center justify-center md:ml-[0] ml-[54px] mr-[74px] md:px-10 px-11 sm:px-5 py-2.5 rounded-[18px] shadow-bs w-auto">
-                      <div className="flex flex-col items-start justify-start w-auto">
-                        <Text
-                          className="capitalize text-base text-center text-white-A700 w-auto"
-                          size="txtPlusJakartaSansMedium16WhiteA700"
-                        >
-                          select{" "}
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2.5 justify-start w-full">
-                    <div className="bg-gray-900_01 flex flex-col gap-2.5 items-center justify-start p-3.5 rounded-[30px] w-full">
-                      <div className="flex flex-col gap-[42px] items-start justify-start w-[70%] md:w-full">
-                        <div className="flex flex-col gap-3.5 items-start justify-start w-auto">
-                          <Text
-                            className="capitalize text-center text-white-A700 text-xl w-[103px]"
-                            size="txtPlusJakartaSansSemiBold20"
-                          >
-                            Pro Carton{" "}
-                          </Text>
-                          <Text
-                            className="sm:text-[27px] md:text-[29px] text-[31px] text-white-A700 tracking-[-0.86px] w-[145px]"
-                            size="txtSpaceGroteskBold31"
-                          >
-                            Rs. 60000
-                          </Text>
-                        </div>
-                        <Img
-                          className="h-[165px] md:h-auto md:ml-[0] ml-[3px] object-cover w-[66%] sm:w-full"
-                          src="images/img_i290421638so.png"
-                          alt="i290421638so"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2.5 items-start justify-start mb-[84px] mr-[26px] w-auto">
-                        <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-full">
-                          <Img
-                            className="h-[15px] w-[15px]"
-                            src="images/img_listiconsvg.svg"
-                            alt="listiconsvg"
-                          />
-                          <Text
-                            className="text-base text-white-A700"
-                            size="txtPlusJakartaSansMedium16WhiteA700"
-                          >
-                            Cardboard Cartons
-                          </Text>
-                        </div>
-                        <div className="flex flex-row gap-2.5 items-center justify-start pr-[3px] py-[3px] w-[78%] md:w-full">
-                          <Img
-                            className="h-[15px] w-[15px]"
-                            src="images/img_listiconsvg.svg"
-                            alt="listiconsvg_One"
-                          />
-                          <Text
-                            className="text-base text-white-A700"
-                            size="txtPlusJakartaSansMedium16WhiteA700"
-                          >
-                            10000 Units
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-deep_orange-A700 flex flex-col items-center justify-center md:ml-[0] ml-[54px] mr-[74px] md:px-10 px-11 sm:px-5 py-2.5 rounded-[18px] shadow-bs w-auto">
-                      <div className="flex flex-col items-start justify-start w-auto">
-                        <Text
-                          className="capitalize text-base text-center text-white-A700 w-auto"
-                          size="txtPlusJakartaSansMedium16WhiteA700"
-                        >
-                          select{" "}
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
+             ))}    
+                 
+                  
+
+               
+                  
                 </List>
               </div>
             </div>
@@ -1091,18 +943,18 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                   </div>
                   <div className="flex flex-col items-center justify-center md:ml-[0] ml-[26px] py-[3px] w-auto">
                     <Text
-                      className="text-base text-blue_gray-200 w-auto"
+                      className="text-base text-blue_gray-200 w-auto text-[20px]"
                       size="txtPlusJakartaSansMedium16"
                     >
                       Select from our range of containers
                     </Text>
                   </div>
                   <div className="flex flex-col gap-[15px] items-start justify-start mb-40 p-[17px] w-[96%] md:w-full">
-                    <div className="flex flex-row items-start justify-end mt-[3px] p-[7px]">
+                    <div    className="flex flex-row items-center justify-start mt-[3px] p-[7px] w-[450px]">
                      
 
                     <Img
-                                className="h-10 mb-[19px] mt-[3px] w-10 mr-4"
+                                className="h-10  w-10 mr-4"
                                 src="images/img_clock.svg"
                                 alt="clock"
                               />
@@ -1114,9 +966,9 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                         Plastic 200ml PET Bottles
                       </Text>
                     </div>
-                    <div className="flex flex-row items-start justify-end p-[3px]">
+                    <div className="flex flex-row items-center justify-start p-[3px] w-[450px]">
                     <Img
-                                className="h-10 mb-[19px] mt-[3px] w-10 mr-4"
+                                className="h-10  mt-[3px] w-10 mr-4"
                                 src="images/img_clock.svg"
                                 alt="clock"
                               />
@@ -1127,9 +979,9 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                         Hard Cardbord 200 ml cartons
                       </Text>
                     </div>
-                    <div className="flex flex-row items-start justify-end mb-[3px] p-[7px]">
+                    <div className="flex flex-row items-center justify-start p-[3px] w-[450px]  ">
                     <Img
-                                className="h-10 mb-[19px] mt-[3px] w-10 mr-4"
+                                className="h-10 mt-[3px] w-10 mr-4"
                                 src="images/img_clock.svg"
                                 alt="clock"
                               />
@@ -1355,6 +1207,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                       </List>
                       <div className="flex flex-row flex-wrap sm:gap-10 gap-[152px] items-start justify-start max-w-[694px] py-[3px] w-full">
                         <Button
+                           onClick={() => scrollToSection("advertising")}
                           className="capitalize cursor-pointer font-medium rounded-[27px] text-base text-center tracking-[0.40px] w-[233px]"
                           shape="round"
                           color="deep_orange_A700"
@@ -1363,6 +1216,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                           Advertise with Us
                         </Button>
                         <Button
+                           onClick={() => scrollToSection("Process")}
                           className="cursor-pointer flex items-center justify-center min-w-[149px]"
                           rightIcon={
                             <Img
@@ -1404,7 +1258,7 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-900_02 flex flex-col items-center justify-end pt-[22px] w-full">
+        <div id="Contactus" className="bg-gray-900_02 flex flex-col items-center justify-end pt-[22px] w-full">
           <div className="flex flex-col items-center justify-start w-full">
             <div className="flex flex-col justify-start w-full">
               <div className="flex md:flex-col flex-row md:gap-10 gap-[341px] items-start justify-start ml-14 md:ml-[0] md:px-5 w-[81%] md:w-full">
@@ -1451,13 +1305,13 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                       >
                         Contact Us
                       </Button>
-                      <div className="flex flex-row items-center justify-start w-[88%] md:w-full">
+                      <div  className="flex flex-row items-center justify-start w-[88%] md:w-full min-w-[160px] ">
                         <Img
                           className="h-5 w-5"
                           src="images/img_location.svg"
                           alt="location"
                         />
-                        <div className="flex flex-col items-start justify-start ml-[5px] pl-[5px] pr-[2.48px] w-auto">
+                        <div  className="flex flex-col items-start justify-start ml-[5px] pl-[5px] pr-[2.48px] w-auto">
                           <Text
                             className="capitalize text-base text-white-A700 w-auto"
                             size="txtPlusJakartaSansMedium16WhiteA700"
@@ -1506,40 +1360,38 @@ const FinalDesignH2OResponsive1500PlusPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-row font-montserratalternates gap-[21px] items-center justify-end ml-72 md:ml-[0] pb-1 w-[49%] md:w-full">
+                  <div className="flex flex-row font-montserratalternates gap-[21px] items-center justify-center ml-72 md:ml-[0] pb-1 w-[80%] md:w-full">
                     <Text
-                      className="text-[15px] text-white-A700"
+                  
+                      className="text-[20px] text-white-A700"
                       size="txtMontserratAlternatesMedium15"
                     >
                       Follow:
                     </Text>
-                    <div className="flex flex-row gap-7 items-start justify-start py-[5px] w-auto">
-                      <div className="flex flex-col h-4 md:h-auto items-start justify-start w-4">
-                        <Img
-                          className="h-4 w-4"
+                    <div    className="flex flex-row gap-7 items-center justify-center py-[5px] w-auto">
+                    
+                      <Img
+                          className="h-8 w-8"
                           src="images/img_facebooksvg.svg"
                           alt="facebooksvg"
                         />
-                      </div>
-                      <div className="flex flex-col h-4 md:h-auto items-start justify-start w-4">
-                        <Img
-                          className="h-[15px] w-4"
-                          src="images/img_twittersvg.svg"
+                      <Img
+                         className="h-8 w-8"
+                          src="/icons8twitter-1.svg"
                           alt="twittersvg"
                         />
-                      </div>
                       <Img
-                        className="h-4 w-4"
+                         className="h-8 w-8"
                         src="images/img_clock_white_a700.svg"
                         alt="clock"
                       />
                       <Img
-                        className="h-4 w-4"
+                          className="h-8 w-8"
                         src="images/img_camera.svg"
                         alt="camera"
                       />
                       <Img
-                        className="h-4 w-4"
+                          className="h-8 w-8"
                         src="images/img_bluetooth.svg"
                         alt="bluetooth"
                       />

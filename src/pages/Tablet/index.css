@@ -1,7 +1,7 @@
 .animated-image {
     position: absolute;
-   
-
+    width: 34%;
+    height: 458px;
     object-fit: cover;
     animation: moveImage 40s linear infinite;
 }
@@ -31,6 +31,7 @@
 
 
 .moving-image {
+  z-index:0;
     animation: moveImage 30s linear infinite; /* Reduced animation duration to 3 seconds */
   }
   
@@ -45,4 +46,15 @@
       left: -100px; /* Final position, off the left side of the screen again */
     }
   }
-  
+  .inputcontainersignup{
+    position: absolute;
+    top: 27.7px;
+    left: 1.5px;
+    border-radius: 5.53px;
+    background-color: var(--color-white);
+    border: 0.9px solid var(--color-gainsboro-100);
+    box-sizing: border-box;
+    width: 542px;
+    height: 50px;
+    color: #000000;  
+  }
